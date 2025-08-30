@@ -1,0 +1,285 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Left & Right Panels */
+.panel {
+    padding: 30px;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.left-panel {
+    background: rgba(0, 0, 0, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.right-panel {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #00ffcc;
+}
+
+/* Inputs, Select & Buttons */
+input, select, button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #00ffcc, #00b3b3);
+    color: #1a1a1a;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #00b3b3, #00ffcc);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.4);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background: rgba(0, 255, 204, 0.2);
+    color: #00ffcc;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Message Box */
+#message {
+    color: #00ffcc;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(0, 255, 204, 0.1);
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Custom Scrollbar */
+.panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.panel::-webkit-scrollbar-thumb {
+    background: #00ffcc;
+    border-radius: 10px;
+}
+
+.panel::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #222;
+    color: #fff;
+    width: 90vw;  /* Adjust width */
+    height: 90vh; /* Adjust height */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: cyan;
+}
+
+.transaction-card {
+    background-color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid cyan;
+}
+
+.transaction-card p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.modal-content button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: auto;
+    border: none;
+    background-color: cyan;
+    color: black;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #00a3a3;
+}
+/* Full-Screen Modal for Staff Expense */
+.expense-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expense-modal-content {
+    background-color: #222;
+    color: #fff;
+    width: 90vw;  /* Full width */
+    height: 90vh; /* Full height */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.expense-modal-content h2 {
+    text-align: center;
+    color: cyan;
+}
+
+.expense-card {
+    background-color: #333;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid cyan;
+}
+
+.expense-card p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.expense-modal-content button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: auto;
+    border: none;
+    background-color: cyan;
+    color: black;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.expense-modal-content button:hover {
+    background-color: #00a3a3;
+}
+
