@@ -13,10 +13,10 @@
     "express": "^4.18.2",
     "mysql2": "^3.6.0",
     "xlsx": "^0.18.5"
-  },
-  "devDependencies": {
-    
-  },
+  }
+  
+  
   "author": "Your Name",
   "license": "MIT"
 }
+
